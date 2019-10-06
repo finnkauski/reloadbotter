@@ -34,7 +34,8 @@ logging.basicConfig(
 def interact(path, wait, hold):
     driver = webdriver.Firefox()
     driver.get(path)
-    driver.implicitly_wait(20)
+    logging.info("Navigate or input what you need in 10 seconds")
+    sleep(10)
     original = driver.page_source
     while driver.page_source == original:
         sleep(wait)
